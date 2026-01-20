@@ -1,14 +1,19 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import Navbar from "./components/layout/Navbar";
+import Dashboard from "./components/Dashboard";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className='text-center bg-amber-100'>
-      Parth Maha
-    </div>
-  )
+    <>
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+        <main className="flex">
+          <Dashboard />
+        </main>
+      </div>
+    </>
+  );
 }
 
-export default App
+export default App;
