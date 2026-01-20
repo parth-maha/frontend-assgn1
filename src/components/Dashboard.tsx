@@ -60,11 +60,20 @@ const Dashboard = () => {
     localStorage.setItem("products", JSON.stringify(updated));
   };
 
+  //edit item
+  const editItem = (oldItem : Item, newItem : Item) =>{
+    const idx = products.indexOf(oldItem)
+    const editted = [...products];
+    editted[idx] = newItem
+    setProducts(editted)
+    localStorage.setItem('products', JSON.stringify(editted))
+  }
+
   return (
-    <div className="flex min-h-screen">
-      <div className="flex-1 p-6">
+    <div className="flex flex-col-reverse md:flex-row min-h-screen">
+      <div className="flex-1 p-6 md:pt-16 pt-6 md:mr-80">
         <div className="flex justify-between"></div>
-        <h2 className="text-2xl font-bold mb-1">Products</h2>
+        <h2 className="text-2xl font-bold mb-1 mt-2">Products</h2>
         <div className="flex gap-5 justify-between">
           <div className="mb-4 font-light">
             Total Products : {products.length}
@@ -114,7 +123,7 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="w-80 p-6 border-l border-gray-300 fixed right-0 top-0 h-full">
+      <div className="w-full md:w-80 p-6 border-l border-gray-300 md:border-l md:border-gray-200 md:right-0 md:top-16 md:overflow-auto fixed right-0 top-16 bottom-0 h-full">
         <h3 className="text-lg font-semibold mb-4">Add New Item</h3>
         <form onSubmit={handleSubmit(addItem)} className="flex flex-col gap-3">
           <input

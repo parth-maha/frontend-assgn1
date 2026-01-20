@@ -18,7 +18,7 @@ const Card: React.FC<CardProps> = ({ item, onRemove }) => {
     return <div className="text-center p-3">Out of Stock</div>;
   }
   return (
-    <div className="border border-gray-300 rounded-lg p-6 w-52 bg-white shadow-sm flex flex-col gap-2">
+    <div className="border border-gray-300 rounded-lg p-6 w-52 relative bg-white shadow-sm flex flex-col gap-2">
       <h3 className="text-lg font-semibold">{item.name}</h3>
       <div className="">
         {item.price >= 500 ? (

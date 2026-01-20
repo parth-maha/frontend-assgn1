@@ -9,7 +9,5 @@
 
 
 ### Remaining
-
-- Responsive UI and sidebar for mobile users
-- Persistent navbar based on view(mobile,screen)
+- Issues in some dimensions for layout
 - Edit product
